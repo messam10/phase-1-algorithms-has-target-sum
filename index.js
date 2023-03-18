@@ -1,5 +1,12 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+
+    let complement = target - array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === complement) return true;
+    }
+  }
+  return false;
 }
 
 /* 
@@ -8,10 +15,24 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+
+  function hasTargetSum(array, target) {
+  for (let i = 0; i < array.length; i++) {
+
+    let complement = target - array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      return array[j] === complement;
+    }
+  }
+  return array[i] === complement;
+}
 */
 
 /*
   Add written explanation of your solution here
+
+  created two loops, the first checks the number, and the second checks all numbers.
+  Then decrease the target value with the number in the first loop and look for the result if it exists on second loop, it returns true.
 */
 
 // You can run `node index.js` to view these console logs
